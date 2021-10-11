@@ -28,7 +28,8 @@ const multiSelect = function() {
       // create container
       const container = document.createElement('div');
       // carry over classes
-      el.classList.forEach(function(className) {
+	  let classes = Array.prototype.slice.call(el.classList);
+      classes.forEach(function(className) {
         container.classList.add(className);
       });
 
