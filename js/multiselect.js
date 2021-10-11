@@ -132,10 +132,10 @@ document.addEventListener('DOMContentLoaded', function (event) {
 });
 
 // Refresh Method
-window.multiSelect = {
+window.multiSelect = function() {
   function refresh() {
     multiSelect();
-  },
+  }
   // addMulti() {
   //   const root = document.querySelector('#root');
   //   const select = document.createElement('select');
