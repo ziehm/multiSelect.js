@@ -23,7 +23,8 @@ const multiSelect = function() {
       // stores values of dropdown
       map[multi_idx] = [];
       // array of options
-      const { options: opt } = el;
+      const opt = el.options;
+      //const { options: opt } = el;
       // create container
       const container = document.createElement('div');
       // carry over classes
