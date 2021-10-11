@@ -1,4 +1,4 @@
-const updateContainer = (container, inner, selected, opt) => {
+const updateContainer = function(container, inner, selected, opt) {
   if (selected.length > 0) {
     container.value = selected.join(',');
     inner.innerText = selected.join(', ');
@@ -8,7 +8,7 @@ const updateContainer = (container, inner, selected, opt) => {
   }
   container.dispatchEvent(new window.Event('change', { bubbles: true }));
 };
-const buttonToggle = (display, dropdown) => {
+const buttonToggle = function(display, dropdown)  {
   display.classList.toggle('multi__dropdown--toggle');
   dropdown.classList.toggle('multi--hidden');
 };
