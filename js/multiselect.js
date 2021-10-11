@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
 // Refresh Method
 window.multiSelect = {
-  refresh() {
+  function refresh() {
     multiSelect();
   },
   // addMulti() {
