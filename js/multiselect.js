@@ -14,12 +14,12 @@ const buttonToggle = function(display, dropdown)  {
 };
 const map = {};
 let multi_idx = 0;
-const multiSelect = () => {
+const multiSelect = function() {
   Array.from(document.querySelectorAll('.multi'))
-    .filter((multi) => {
+    .filter(function(multi) {
       return multi.getAttribute('data-multiselect-initialized') === null;
     })
-    .forEach((el) => {
+    .forEach(function(el) {
       // stores values of dropdown
       map[multi_idx] = [];
       // array of options
@@ -27,7 +27,7 @@ const multiSelect = () => {
       // create container
       const container = document.createElement('div');
       // carry over classes
-      el.classList.forEach((className) => {
+      el.classList.forEach(function(className) {
         container.classList.add(className);
       });
 
@@ -84,7 +84,7 @@ const multiSelect = () => {
         // a.setAttribute('tabindex','0');
         // a.innerText=opt[i].innerText
         li.innerText = opt[i].innerText;
-        li.addEventListener('click', (e) => {
+        li.addEventListener('click', function(e) {
           e.stopPropagation();
           if (map[key].includes(e.target.innerText)) {
             map[key].splice(map[key].indexOf(e.target.innerText), 1);
@@ -100,7 +100,7 @@ const multiSelect = () => {
         list.appendChild(li);
       }
       // add event listener to container to show / hide dropdown
-      container.addEventListener('click', (e) => {
+      container.addEventListener('click', function(e) {
         e.stopPropagation();
         buttonToggle(display, dropdown);
         // display.classList.toggle('multi__dropdown--toggle');
@@ -115,12 +115,12 @@ const multiSelect = () => {
   multi_idx++;
 };
 // add event listener to window
-document.addEventListener('click', (e) => {
-  document.querySelectorAll('.multi__display').forEach((display) => {
+document.addEventListener('click', function(e) {
+  document.querySelectorAll('.multi__display').forEach(function(display) {
     display.classList.remove('multi__dropdown--toggle');
   });
 
-  document.querySelectorAll('.multi__dropdown').forEach((dropdown) => {
+  document.querySelectorAll('.multi__dropdown').forEach(function(dropdown) {
     dropdown.classList.add('multi--hidden');
   });
 });
